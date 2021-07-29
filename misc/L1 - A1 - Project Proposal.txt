@@ -1,0 +1,21 @@
+UW ASSIGNMENT 1
+
+Site Proposal
+
+Earthquake Info
+
+I would like to build an information website about Earthquakes.
+
+I live in New England and have never experienced an Earthquake, which has made me all the more fascinated with them.  When the news has come in about famous earthquakes over the years, I've been glued to my computer trying to find more information about impacts, the Richter scale and what it means, the different types of earthquakes, tsunamis, and volcanic activity.  I normally find this information in many different places - wikipedia, reddit, news sites, and government information.  
+
+My goal for this website will be to build a one-stop command center for everything earthquake, so that when one strikes, site users can access everything on one site.  This will be a one-stop center for earthquake information to inform people during an emergency.  The information offered by the site should be organized into the following pages:
+
+1. An about page for the site.
+2. Factual data about earthquakes.
+3. Myths, Misconceptions, and FAQ
+4. Preparations for and responses to an earthquake
+5. Live map and/or list indicating the locations, magnitudes and other pertinent information about on-going or recent earthquakes *
+6. Live news about on-going or recent earthquakes *
+7. Live feeds from people streaming on the ground in those locations *
+
+* Pages 5, 6, and 7 would require API data from numerous sources, including the USGS Earthquake API, a feed of new headlines, and a streaming service like Twitch or Facebook Live.  The pages are increasingly ambitious, and I'm prepared to allow time constraints to narrow the scope of the site by knocking off pages 7 and then 6 if need be.
