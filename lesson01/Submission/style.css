@@ -19,3 +19,12 @@ form {
 .locked {
   background-color: lightgrey;
 }
+
+
+.invisible {
+  display: none;
+}
+
+#thanks {
+  margin-top: 3rem;
+}

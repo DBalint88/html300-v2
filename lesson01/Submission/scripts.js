@@ -1,12 +1,18 @@
 // Code that requires the DOM be loaded should not be run until the DOM is loaded
 document. addEventListener("DOMContentLoaded", function(){
 
-  // Declare arrays at global scope
+  // Declare arrays and forms at global scope
   let data1 = [2, 3, 5, 7, 11, 13, 17]
   let data2 = []
+  const form1 = document.querySelector('#form1')
+  const form2 = document.querySelector('#form2')
+  const form3 = document.querySelector('#form3')
+  const form4 = document.querySelector('#form4')
+  const form5 = document.querySelector('#form5')
+  const form6 = document.querySelector('#form6')
+  const thanks = document.querySelector("#thanks")
 
   // Find #form1, and handle its submit event
-  const form1 = document.querySelector('#form1')
   form1.addEventListener('submit', function(event){
 
     // Prevent the form from trying to submit to a server
@@ -28,6 +34,9 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField1.classList.add("locked")
     inputField1.setAttribute("readonly", "")
 
+    // Reveal the next question
+    form2.classList.remove("invisible")
+
   })
 
 
@@ -35,7 +44,7 @@ document. addEventListener("DOMContentLoaded", function(){
 
 
   // Find #form2, and handle its submit event
-  const form2 = document.querySelector('#form2')
+
   form2.addEventListener('submit', function(event){
 
     // Prevent the form from trying to submit to a server
@@ -60,6 +69,8 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField2.classList.add("locked")
     inputField2.setAttribute("readonly", "")
 
+    // Reveal the next question
+    form3.classList.remove("invisible")
   })
 
 
@@ -67,7 +78,7 @@ document. addEventListener("DOMContentLoaded", function(){
 
 
   // Find #form3, and handle its submit event
-  const form3 = document.querySelector('#form3')
+
   form3.addEventListener('submit', function(event){
 
     // Prevent the form from trying to submit to a server
@@ -92,6 +103,9 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField3.classList.add("locked")
     inputField3.setAttribute("readonly", "")
 
+    // Reveal the next question
+    form4.classList.remove("invisible")
+
   })
 
 
@@ -99,7 +113,7 @@ document. addEventListener("DOMContentLoaded", function(){
 
 
   // Find #form4, and handle its submit event
-  const form4 = document.querySelector('#form4')
+
   form4.addEventListener('submit', function(event){
 
     // Prevent the form from trying to submit to a server
@@ -124,6 +138,9 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField4.classList.add("locked")
     inputField4.setAttribute("readonly", "")
 
+    // Reveal the next question
+    form5.classList.remove("invisible")
+
   })
 
 
@@ -131,7 +148,7 @@ document. addEventListener("DOMContentLoaded", function(){
 
 
     // Find #form5, and handle its submit event
-    const form5 = document.querySelector('#form5')
+
     form5.addEventListener('submit', function(event){
 
       // Prevent the form from trying to submit to a server
@@ -156,6 +173,9 @@ document. addEventListener("DOMContentLoaded", function(){
       inputField5.classList.add("locked")
       inputField5.setAttribute("readonly", "")
 
+      // Reveal the next question
+      form6.classList.remove("invisible")
+
     })
 
 
@@ -163,7 +183,7 @@ document. addEventListener("DOMContentLoaded", function(){
 
 
       // Find #form6, and handle its submit event
-      const form6 = document.querySelector('#form6')
+
       form6.addEventListener('submit', function(event){
 
         // Prevent the form from trying to submit to a server
@@ -175,10 +195,12 @@ document. addEventListener("DOMContentLoaded", function(){
 
         // If the user's input was a number, push it to the array and sum it all.
         if(!isNaN(userNumber6)){
-          data2.push(userInput6)
+          data2.push(userNumber6)
+          console.log(data2)
           const sum = data2.reduce((total, element) => {
             return total + element;
           }, 0);
+          console.log(sum)
             // Output the response.
               document.querySelector('#form6 .output').innerHTML = `Your number, ${userNumber6}, plus all the other numbers in the array equals: ${sum}!`
 
@@ -188,6 +210,9 @@ document. addEventListener("DOMContentLoaded", function(){
         // Lock the box.
         inputField6.classList.add("locked")
         inputField6.setAttribute("readonly", "")
+
+        // Reveal the thank you note
+        thanks.classList.remove("invisible")
 
       })
 
