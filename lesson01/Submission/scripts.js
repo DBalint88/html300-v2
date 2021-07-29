@@ -30,6 +30,10 @@ document. addEventListener("DOMContentLoaded", function(){
 
   })
 
+
+/* FORM 2 FORM 2 FORM 2 FORM 2 FORM 2 FORM 2 FORM 2 FORM 2 FORM 2 */
+
+
   // Find #form2, and handle its submit event
   const form2 = document.querySelector('#form2')
   form2.addEventListener('submit', function(event){
@@ -58,6 +62,10 @@ document. addEventListener("DOMContentLoaded", function(){
 
   })
 
+
+/* FORM 3 FORM 3 FORM 3 FORM 3 FORM 3 FORM 3 FORM 3 FORM 3 FORM 3 */
+
+
   // Find #form3, and handle its submit event
   const form3 = document.querySelector('#form3')
   form3.addEventListener('submit', function(event){
@@ -85,5 +93,102 @@ document. addEventListener("DOMContentLoaded", function(){
     inputField3.setAttribute("readonly", "")
 
   })
+
+
+/* Form 4 Form 4 Form 4 Form 4 Form 4 Form 4 Form 4 Form 4 Form 4 Form 4 */
+
+
+  // Find #form4, and handle its submit event
+  const form4 = document.querySelector('#form4')
+  form4.addEventListener('submit', function(event){
+
+    // Prevent the form from trying to submit to a server
+    event.preventDefault()
+
+    const inputField4 = document.querySelector('#form4 .input')
+    const userInput4 = inputField4.value
+    const userNumber4 = parseInt(userInput4)
+
+    // If the user's input was a number, find out if it's in the new array.
+    if(!isNaN(userNumber4)){
+      const isPresent = data2.filter(x => x == userInput4)
+        // Output the response.
+        if(isPresent.length >= 1) {
+          document.querySelector('#form4 .output').innerHTML = `Yes! ${userInput4} is in the array!`
+        } else {
+          document.querySelector('#form4 .output').innerHTML = `No, ${userInput4} is not in the array.`
+        }
+    }
+
+    // Lock the box.
+    inputField4.classList.add("locked")
+    inputField4.setAttribute("readonly", "")
+
+  })
+
+
+  /* Form 5 Form 5 Form 5 Form 5 Form 5 Form 5 Form 5 Form 5 Form 5 Form 5 */
+
+
+    // Find #form5, and handle its submit event
+    const form5 = document.querySelector('#form5')
+    form5.addEventListener('submit', function(event){
+
+      // Prevent the form from trying to submit to a server
+      event.preventDefault()
+
+      const inputField5 = document.querySelector('#form5 .input')
+      const userInput5 = inputField5.value
+      const userNumber5 = parseInt(userInput5)
+
+      // If the user's input was a number, find out what the next higher number in the array is.
+      if(!isNaN(userNumber5)){
+        const nextHighest = data2.find(x => x > userInput5)
+          // Output the response.
+          if(typeof nextHighest === 'undefined') {
+            document.querySelector('#form5 .output').innerHTML = `${userNumber5} is higher than all the numbers in the array!`
+          } else {
+            document.querySelector('#form5 .output').innerHTML = `${nextHighest} is the next highest number in the array.`
+          }
+      }
+
+      // Lock the box.
+      inputField5.classList.add("locked")
+      inputField5.setAttribute("readonly", "")
+
+    })
+
+
+    /* Form 6 Form 6 Form 6 Form 6 Form 6 Form 6 Form 6 Form 6 Form 6 Form 6 */
+
+
+      // Find #form6, and handle its submit event
+      const form6 = document.querySelector('#form6')
+      form6.addEventListener('submit', function(event){
+
+        // Prevent the form from trying to submit to a server
+        event.preventDefault()
+
+        const inputField6 = document.querySelector('#form6 .input')
+        const userInput6 = inputField6.value
+        const userNumber6 = parseInt(userInput6)
+
+        // If the user's input was a number, push it to the array and sum it all.
+        if(!isNaN(userNumber6)){
+          data2.push(userInput6)
+          const sum = data2.reduce((total, element) => {
+            return total + element;
+          }, 0);
+            // Output the response.
+              document.querySelector('#form6 .output').innerHTML = `Your number, ${userNumber6}, plus all the other numbers in the array equals: ${sum}!`
+
+
+        }
+
+        // Lock the box.
+        inputField6.classList.add("locked")
+        inputField6.setAttribute("readonly", "")
+
+      })
 
 })
