@@ -196,11 +196,9 @@ document. addEventListener("DOMContentLoaded", function(){
         // If the user's input was a number, push it to the array and sum it all.
         if(!isNaN(userNumber6)){
           data2.push(userNumber6)
-          console.log(data2)
           const sum = data2.reduce((total, element) => {
             return total + element;
           }, 0);
-          console.log(sum)
             // Output the response.
               document.querySelector('#form6 .output').innerHTML = `Your number, ${userNumber6}, plus all the other numbers in the array equals: ${sum}!`
 
