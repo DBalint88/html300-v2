@@ -18,13 +18,19 @@ document. addEventListener("DOMContentLoaded", function(){
     // If the user's input was a number, multiply each number in the array by it.
     if(!isNaN(userNumber1)){
       const data2 = data1.map(x => x * userNumber1)
-      // Output the total to the page- no need to convert the numeric sum back to a string, HTML will just print the number as a string
+
+      // Output the new array.
       document.querySelector('#form1 .output').innerHTML = data2
       console.log(data2)
+
     }
 
-    // Clear the form field so the user can try again
-    inputField1.value = ''
+    // Lock the first input box visually and functionally, so the other forms can be consistent.
+    inputField1.classList.add("locked")
+    inputField1.setAttribute("readonly", "")
+
   })
+
+
 
 })
