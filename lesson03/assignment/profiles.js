@@ -1,3 +1,5 @@
+
+// The given array of objects:
 const profiles = [
   {
     "name": "Paolo Maldini",
@@ -57,10 +59,13 @@ const profiles = [
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  // Loop through object in the array
+  // Loop through each object in the array
+
   profiles.forEach(function(el) {
 
-    // Within each object,
+    // For each iteration, create a new div that contains the html template.
+    // Template literals generate the info from each object.
+
     let list = document.createElement('div')
     list.classList.add('outer-gray')
     list.innerHTML = `
@@ -117,6 +122,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       </div>
       </div>
     `
+
+    // Append the latest div to the hook before re-iterating for the next object.
 
     const container = document.querySelector('.template-hook')
     container.append(list)
