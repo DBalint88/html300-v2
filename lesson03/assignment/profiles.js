@@ -1,7 +1,4 @@
-
-
-
-profiles = [
+const profiles = [
   {
     "name": "Paolo Maldini",
     "jobTitle": "Front End Developer",
@@ -54,4 +51,75 @@ profiles = [
        "HTML", "CSS", "JavaScript", "React", "Vue", "Redux"
     ]
   }
- ]
+]
+
+// Only run code once the page is laoded, so it isn't looking for elements that don't exist yet
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+  // Loop through object in the array
+  profiles.forEach(function(el) {
+
+    // Within each object,
+    let list = document.createElement('div')
+    list.classList.add('outer-gray')
+    list.innerHTML = `
+
+          <div class="main-white">
+
+        <div class="photo-header">
+          <img id="headshot" src="/img/headshot.jpg" alt="the handsomes front-end dev">
+          <div class="header">
+            <h1>${el.name}</h1>
+            <h2>${el.jobTitle}</h2>
+          </div>
+        </div>
+
+        <div class="info">
+          <table>
+            <tr>
+              <td>
+                <h3>Company:</h3>
+                <p>${el.company}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Experience:</h3>
+                <p>${el.experience}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>School:</h3>
+                <p>${el.school}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Major:</h3>
+                <p>${el.major}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Email:</h3>
+                <p>${el.email}</p>
+              </td>
+            </tr>
+          </table>
+          <div class="linkedin">
+            <img src="/img/linkedin.svg" alt="Linkedin Logo Icon">
+            <p>${el.linkedInUrl}</p>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    `
+
+    const container = document.querySelector('.template-hook')
+    container.append(list)
+  })
+
+});
