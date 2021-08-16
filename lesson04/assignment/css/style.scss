@@ -34,17 +34,22 @@ body {
 }
 
 
-#pen1:hover {
+#pen1 {
+  &:hover {
+    background-color: $edgewater;
     #object1 {
-    transform: scale(2);
+      transform: scale(2);
+    }
   }
 }
 
 
 #pen2 {
+  transition: 1s ease-out;
   &:hover {
+    @include active-pen;
     #object2 {
-    transform: scale(2);
+      transform: scale(2);
     }
   }
   #object2 {
@@ -54,10 +59,12 @@ body {
 
 
 #pen3 {
+  transition: 1s ease-out;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
    &:hover {
+    @include active-pen;
     #object3a, #object3b, #object3c, #object3d, #object3e {
     transform: translateX(400px);
     }
@@ -81,10 +88,12 @@ body {
 
 
 #pen4 {
+  transition: 1s ease-out;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   &:hover {
+    @include active-pen;
     #object4a, #object4b, #object4c, #object4d, #object4e {
     transform: translateX(400px);
     }
@@ -106,16 +115,23 @@ body {
   }
 }
 
-
-#object5 {
-  transition: transform 3s ease .2s;
+#pen5 {
+  transition: 1s ease-out;
   &:hover {
-    transform: rotate(2520deg);
+    @include active-pen;
+  }
+  #object5 {
+    transition: transform 3s ease .2s;
+    &:hover {
+      transform: rotate(2520deg);
+    }
   }
 }
 
 
-#pen6, #label6 {
+
+#pen6 {
+  transition: 1s ease-out;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -136,26 +152,42 @@ body {
     transition: transform 1s ease-in .2s;
   }
   &:hover {
+    @include active-pen;
     #object6a, #object6b, #object6c, #object6d {
       transform: rotate(360deg);
     }
   }
 }
 
+#label6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
 #pen7{
+  transition: 1s ease-out;
   #object7 {
     transform-origin: 100% 100%;
     transition: transform 1s ease-in .2s;
   }
-  &:hover #object7 {
+  &:hover {
+    @include active-pen;
+    #object7 {
     transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);
+    }
   }
 }
 
 
-#pen8:hover #object8 {
-  animation: wobble 1s linear 0s infinite;
+#pen8 {
+  transition: 1s ease-out;
+  &:hover {
+    @include active-pen;
+    #object8 {
+    animation: wobble 1s linear 0s infinite;
+    }
+  }
 }
 
 
