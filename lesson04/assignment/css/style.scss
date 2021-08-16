@@ -1,8 +1,7 @@
+@import 'wobble';
+@import 'colors';
+@import 'mixins';
 
-$mild: rgba(34,247,5,1);
-$moderate: rgba(243,245,4,1);
-$significant: rgba(255,175,0,1);
-$severe: rgba(135,0,0,1);
 
 html {
   --wobble-factor: 0;
@@ -53,13 +52,11 @@ body {
   }
 }
 
-#pen3, #pen4 {
+
+#pen3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-}
-
-#pen3 {
    &:hover {
     #object3a, #object3b, #object3c, #object3d, #object3e {
     transform: translateX(400px);
@@ -82,7 +79,11 @@ body {
   }
 }
 
+
 #pen4 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
   &:hover {
     #object4a, #object4b, #object4c, #object4d, #object4e {
     transform: translateX(400px);
@@ -105,12 +106,14 @@ body {
   }
 }
 
+
 #object5 {
   transition: transform 3s ease .2s;
   &:hover {
     transform: rotate(2520deg);
   }
 }
+
 
 #pen6, #label6 {
   display: grid;
@@ -139,6 +142,7 @@ body {
   }
 }
 
+
 #pen7{
   #object7 {
     transform-origin: 100% 100%;
@@ -146,36 +150,6 @@ body {
   }
   &:hover #object7 {
     transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);
-  }
-}
-
-@keyframes wobble {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  15% {
-    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
-  }
-
-  30% {
-    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * 9deg));
-  }
-
-  45% {
-    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
-  }
-
-  60% {
-    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * 9deg));
-  }
-
-  75% {
-    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
   }
 }
 

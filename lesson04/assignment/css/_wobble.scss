@@ -1,0 +1,29 @@
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
+  }
+
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * 9deg));
+  }
+
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
+  }
+
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * 9deg));
+  }
+
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, calc(var(--wobble-factor) * -9deg));
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
