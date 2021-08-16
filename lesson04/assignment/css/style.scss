@@ -1,12 +1,17 @@
+
+// Partials.  wobble is the animation in pens 8 and 9.
+// mixins is just one mixin, a back-ground color transition on the active pen.
 @import 'wobble';
 @import 'colors';
 @import 'mixins';
 
+// I used the --wobble-factor variable to control the needle in pen 9 per user input
 
 html {
   --wobble-factor: 0;
 }
 
+// Two equal columns, as many rows as necessary.
 body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,6 +20,7 @@ body {
   width: 1245px;
 }
 
+// Setting up and framing the space for each pen, each label
 .pen, .label {
   border: 2px solid black;
   height: 100%;
@@ -26,6 +32,7 @@ body {
   border-radius: 5%;
 }
 
+// Generic blue rectangles that I could practice manipulating
 .object {
   height: 60px;
   width: 100px;
@@ -33,7 +40,7 @@ body {
   background-color: blue;
 }
 
-
+// No transitions, no mixin, just a harsh transform.
 #pen1 {
   &:hover {
     background-color: $edgewater;
@@ -43,7 +50,7 @@ body {
   }
 }
 
-
+// Same as pen 1 but with transition and active-pen mixin.
 #pen2 {
   transition: 1s ease-out;
   &:hover {
@@ -57,7 +64,7 @@ body {
   }
 }
 
-
+// Learning the different timing functions with a rectangle race
 #pen3 {
   transition: 1s ease-out;
   flex-direction: column;
@@ -86,7 +93,7 @@ body {
   }
 }
 
-
+// Playing with delays
 #pen4 {
   transition: 1s ease-out;
   flex-direction: column;
@@ -115,6 +122,7 @@ body {
   }
 }
 
+// Playing with 2d rotations
 #pen5 {
   transition: 1s ease-out;
   &:hover {
@@ -128,8 +136,7 @@ body {
   }
 }
 
-
-
+// Playing with tranform-origin.  Each roates around its own position in the larger square.
 #pen6 {
   transition: 1s ease-out;
   display: grid;
@@ -165,6 +172,7 @@ body {
   grid-template-rows: 1fr 1fr;
 }
 
+// Playing with combined transformations.
 #pen7{
   transition: 1s ease-out;
   #object7 {
@@ -179,7 +187,7 @@ body {
   }
 }
 
-
+// Playing with animation and specifically the wobble one.
 #pen8 {
   transition: 1s ease-out;
   &:hover {
@@ -191,10 +199,10 @@ body {
 }
 
 
+
 #pen9 {
-  width: 100%;
-  height: 100%;
-  position: relative;
+
+  // Scale is a half circle with a color gradient to indicated severity of shaking.
   #scale {
     width: 500px;
     height: 250px;
@@ -207,11 +215,17 @@ body {
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
+
+  // Needle is just a tall skinny div.
   #needle {
     background-color: black;
     height: 250px;
     width: 10px;
+
+    // Absolute so it can overlay the scale
     position: absolute;
+
+    // So the wobbling originates from the bottom-middle:
     transform-origin: 50% 100%;
     &.needle-animation {
       animation: wobble 1s linear 0s infinite;

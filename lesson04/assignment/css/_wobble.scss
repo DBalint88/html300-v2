@@ -1,3 +1,8 @@
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+// Animation calc's the level of 3d rotation based on --wobble-factor, which is changed in script.js when user clicks submit.
+
 @keyframes wobble {
   from {
     transform: translate3d(0, 0, 0);

@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<!-- The page is set up with a left column of pens and a right column of
+labels describing the transition and the transformation / animation.  Pens
+#1-7 came from this site: https://thoughtbot.com/blog/transitions-and-transforms
+and I was just making this cheat sheet for practice, since I was really
+confused about the topic.  But I figured I'd turn in all my work. Skip to
+Pens #8 & 9 for the animation I intend for the class project. -->
+
+<!-- Pen & Label #1 -->
   <div class="pen" id="pen1">
     <div class="object" id="object1"></div>
   </div>
@@ -17,6 +25,7 @@
     <h1>no transition</h1>
   </div>
 
+<!-- Pen & Label #2 -->
   <div class="pen" id="pen2">
     <div class="object" id="object2"></div>
   </div>
@@ -25,6 +34,7 @@
     <h1>transition: transform 1s;</h1>
   </div>
 
+<!-- Pen & Label #3 -->
   <div class="pen" id="pen3">
     <div class="object" id="object3a"></div>
     <div class="object" id="object3b"></div>
@@ -41,6 +51,7 @@
     <h1>transition: all 3s ease-in-out;</h1>
   </div>
 
+<!-- Pen & Label #4 -->
   <div class="pen" id="pen4">
     <div class="object" id="object4a"></div>
     <div class="object" id="object4b"></div>
@@ -57,6 +68,7 @@
     <h1>transition: all 3s linear 2s;</h1>
   </div>
 
+<!-- Pen & Label #5 -->
   <div class="pen" id="pen5">
     <div class="object" id="object5"></div>
   </div>
@@ -65,6 +77,7 @@
     <h1>transition: transform 3s ease .2s;</h1>
   </div>
 
+<!-- Pen & Label #6 -->
   <div class="pen" id="pen6">
     <div class="pen" id="pen6a">
       <div class="object" id="object6a"></div>
@@ -102,6 +115,7 @@
     </div>
   </div>
 
+<!-- Pen & Label #7 -->
   <div class="pen" id="pen7">
     <div class="object" id="object7"></div>
   </div>
@@ -111,12 +125,21 @@
     <h1>transition: transform 1s ease-in .2s;</h1>
   </div>
 
+<!-- Pen & Label #8. This came from https://animate.style/ under "Attention
+Getters" called "Wobble." I traced it to this GitHub repo for the code on that specific animation:
+https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/wobble.css -->
+
   <div class="pen" id="pen8">
     <div class="object" id="object8"></div>
   </div>
   <div class="label">
     <h1>animation: wobble 1s linear 0s infinite;</h1>
   </div>
+
+<!-- Pen & Label #9.  This is the one I intend for the class project.
+
+I took Wobble and added an origin at the center of the bottom of the needle
+div, a "richter scale" behind it, and a JS user input.  This is a stand-in for an API reporting the richter scale reading from an active seismic event.  The needle wobbles more enthusiastically for higher numbers to represent the level of shaking. -->
 
   <div class="pen" id="pen9">
     <div id="scale"></div>
