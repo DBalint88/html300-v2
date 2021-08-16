@@ -5,11 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <title>CSS Transitions</title>
 </head>
 <body>
-  <main class="main">
 
-  </main>
+  <div class="pen" id="pen1">
+    <div class="object" id="object1"></div>
+  </div>
+  <div class="label">
+    <h1>transform: scale(2)</h1>
+    <h1>no transition</h1>
+  </div>
+
+  <div class="pen" id="pen2">
+    <div class="object" id="object2"></div>
+  </div>
+  <div class="label">
+    <h1>transform: scale(2)</h1>
+    <h1>transition: transform 1s;</h1>
+  </div>
+
+  <div class="pen" id="pen3">
+    <div class="object" id="object3a"></div>
+    <div class="object" id="object3b"></div>
+    <div class="object" id="object3c"></div>
+    <div class="object" id="object3d"></div>
+    <div class="object" id="object3e"></div>
+  </div>
+  <div class="label">
+    <h1>transform: translateX(200px)</h1>
+    <h1>transition: all 3s linear;</h1>
+    <h1>transition: all 3s ease;</h1>
+    <h1>transition: all 3s ease-in;</h1>
+    <h1>transition: all 3s ease-out;</h1>
+    <h1>transition: all 3s ease-in-out;</h1>
+  </div>
+
+  <div class="pen" id="pen4">
+    <div class="object" id="object4a"></div>
+    <div class="object" id="object4b"></div>
+    <div class="object" id="object4c"></div>
+    <div class="object" id="object4d"></div>
+    <div class="object" id="object4e"></div>
+  </div>
+  <div class="label">
+    <h1>transform: translateX(200px)</h1>
+    <h1>transition: all 3s linear;</h1>
+    <h1>transition: all 3s linear .5s;</h1>
+    <h1>transition: all 3s linear 1s;</h1>
+    <h1>transition: all 3s linear 1.5s;</h1>
+    <h1>transition: all 3s linear 2s;</h1>
+  </div>
+
+  <div class="pen" id="pen5">
+    <div class="object" id="object5"></div>
+  </div>
+  <div class="label">
+    <h1>transform: rotate(2520deg)</h1>
+    <h1>transition: transform 3s ease .2s;</h1>
+  </div>
+
+  <div class="pen" id="pen6">
+    <div class="pen" id="pen6a">
+      <div class="object" id="object6a"></div>
+    </div>
+    <div class="pen" id="pen6b">
+      <div class="object" id="object6b"></div>
+    </div>
+    <div class="pen" id="pen6c">
+      <div class="object" id="object6c"></div>
+    </div>
+    <div class="pen" id="pen6d">
+      <div class="object" id="object6d"></div>
+    </div>
+  </div>
+  <div class="label" id="label6">
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 0% 0%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 100% 0%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 0% 100%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 100% 100%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+  </div>
+
+  <div class="pen" id="pen7">
+    <div class="object" id="object7"></div>
+  </div>
+  <div class="label">
+    <h4>transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);</h4>
+    <h1>transform-origin: 100% 100%;</h1>
+    <h1>transition: transform 1s ease-in .2s;</h1>
+  </div>
+
+  <div class="pen" id="pen8">
+    <div class="object" id="object8"></div>
+  </div>
+  <div class="label">
+    <h1>animation: wobble 1s linear 0s infinite;</h1>
+  </div>
+
+  <div class="pen" id="pen9">
+    <div id="scale"></div>
+    <div id="needle" class="needle-animation"></div>
+  </div>
+  <div class="label">
+    <h1>Wobble</h1>
+    <form id="wobble-form">
+      <label for="wobble-factor">
+        <input id="wobble-factor" type="number" name="wobble-value" value="0" max=10 min=0>
+      </label>
+      <input type="submit">
+
+    </form>
+  </div>
+
 </body>
+<script src="script.js">
+
+</script>
 </html>
