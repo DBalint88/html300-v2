@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  width: fit-content;
+  margin: auto;
+}
+
+form {
+  width: 45rem;
+  margin: auto;
+  margin-top: 3rem;
+  border: 1px solid orange;
+  padding: 1rem;
+  text-align: center;
+}
+
+.locked {
+  background-color: lightgrey;
+}
+
+
+.invisible {
+  display: none;
+}
+
+#thanks {
+  margin-top: 3rem;
+}
