@@ -34,15 +34,23 @@ body {
   background-color: blue;
 }
 
-#pen1:hover #object1 {
-  transform: scale(2);
+
+#pen1:hover {
+    #object1 {
+    transform: scale(2);
+  }
 }
 
-#object2 {
-  transition: transform 1s ease-out;
-}
-#pen2:hover #object2 {
-  transform: scale(2);
+
+#pen2 {
+  &:hover {
+    #object2 {
+    transform: scale(2);
+    }
+  }
+  #object2 {
+    transition: transform 1s ease-out;
+  }
 }
 
 #pen3, #pen4 {
@@ -51,98 +59,94 @@ body {
   justify-content: space-around;
 }
 
-#pen3:hover #object3a, #pen3:hover #object3b, #pen3:hover #object3c, #pen3:hover #object3d, #pen3:hover #object3e {
-  transform: translateX(400px);
+#pen3 {
+   &:hover {
+    #object3a, #object3b, #object3c, #object3d, #object3e {
+    transform: translateX(400px);
+    }
+    #object3a {
+      transition: transform 3s linear;
+    }
+    #object3b {
+      transition: transform 3s ease;
+    }
+    #object3c {
+      transition: transform 3s ease-in;
+    }
+    #object3d {
+      transition: transform 3s ease-out;
+    }
+    #object3e {
+      transition: transform 3s ease-in-out;
+    }
+  }
 }
 
-#object3a {
-  transition: transform 3s linear;
-}
-
-#object3b {
-  transition: transform 3s ease;
-}
-
-#object3c {
-  transition: transform 3s ease-in;
-}
-
-#object3d {
-  transition: transform 3s ease-out;
-}
-
-#object3e {
-  transition: transform 3s ease-in-out;
-}
-
-#pen4:hover #object4a, #pen4:hover #object4b, #pen4:hover #object4c, #pen4:hover #object4d, #pen4:hover #object4e {
-  transform: translateX(400px);
-}
-
-#object4a {
-  transition: transform 3s linear;
-}
-
-#object4b {
-  transition: transform 3s linear .5s;
-}
-
-#object4c {
-  transition: transform 3s linear 1s;
-}
-
-#object4d {
-  transition: transform 3s linear 1.5s;
-}
-
-#object4e {
-  transition: transform 3s linear 2s;
+#pen4 {
+  &:hover {
+    #object4a, #object4b, #object4c, #object4d, #object4e {
+    transform: translateX(400px);
+    }
+    #object4a {
+      transition: transform 3s linear;
+    }
+    #object4b {
+      transition: transform 3s linear .5s;
+    }
+    #object4c {
+      transition: transform 3s linear 1s;
+    }
+    #object4d {
+      transition: transform 3s linear 1.5s;
+    }
+    #object4e {
+      transition: transform 3s linear 2s;
+    }
+  }
 }
 
 #object5 {
   transition: transform 3s ease .2s;
-}
-#object5:hover {
-  transform: rotate(2520deg);
+  &:hover {
+    transform: rotate(2520deg);
+  }
 }
 
 #pen6, #label6 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  #object6a {
+    transform-origin: 0% 0%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6b {
+    transform-origin: 100% 0%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6c {
+    transform-origin: 0% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6d {
+    transform-origin: 100% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  &:hover {
+    #object6a, #object6b, #object6c, #object6d {
+      transform: rotate(360deg);
+    }
+  }
 }
 
-#object6a {
-  transform-origin: 0% 0%;
-  transition: transform 1s ease-in .2s;
-}
-
-#object6b {
-  transform-origin: 100% 0%;
-  transition: transform 1s ease-in .2s;
-}
-
-#object6c {
-  transform-origin: 0% 100%;
-  transition: transform 1s ease-in .2s;
-}
-
-#object6d {
-  transform-origin: 100% 100%;
-  transition: transform 1s ease-in .2s;
-}
-
-#pen6:hover #object6a, #pen6:hover #object6b, #pen6:hover #object6c, #pen6:hover #object6d {
-  transform: rotate(360deg);
-}
-
-#object7 {
-  transform-origin: 100% 100%;
-  transition: transform 1s ease-in .2s;
-}
-
-#pen7:hover #object7 {
-  transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);
+#pen7{
+  #object7 {
+    transform-origin: 100% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  &:hover #object7 {
+    transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);
+  }
 }
 
 @keyframes wobble {
@@ -176,40 +180,35 @@ body {
 }
 
 
-
 #pen8:hover #object8 {
   animation: wobble 1s linear 0s infinite;
 }
+
 
 #pen9 {
   width: 100%;
   height: 100%;
   position: relative;
-
-}
-
-#scale {
-  width: 500px;
-  height: 250px;
-  border-top-left-radius: 250px;
-  border-top-right-radius: 250px;
-  z-index: -1;
-
-  border-bottom: 0;
-  border: 10px solid gray;
-  background-image: linear-gradient(90deg, $severe 0%, $significant 20%, $moderate 35%, $mild 50%, $moderate 65%, $significant 80%, $severe 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-
-#needle {
-  background-color: black;
-  height: 250px;
-  width: 10px;
-  position: absolute;
-  transform-origin: 50% 100%;
-}
-
-.needle-animation {
-  animation: wobble 1s linear 0s infinite;
+  #scale {
+    width: 500px;
+    height: 250px;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    z-index: -1;
+    border-bottom: 0;
+    border: 10px solid gray;
+    background-image: linear-gradient(90deg, $severe 0%, $significant 20%, $moderate 35%, $mild 50%, $moderate 65%, $significant 80%, $severe 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  #needle {
+    background-color: black;
+    height: 250px;
+    width: 10px;
+    position: absolute;
+    transform-origin: 50% 100%;
+    &.needle-animation {
+      animation: wobble 1s linear 0s infinite;
+    }
+  }
 }
