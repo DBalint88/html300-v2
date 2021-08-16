@@ -1,5 +1,5 @@
 // Colors
-$gray: #f6f5f6;
+$gray: #f6f6f6;
 $white: #ffffff;
 $black: #000000;
 $green: #7acb00;
@@ -10,3 +10,6 @@ $yellow: #ffb617;
 $robins: #01c1d6;
 $purple: #6e27c5;
 $blue: #150f96;
+
+$darkgray : darken( $gray, 15%);
+$darkergray : darken( $gray, 55%);
