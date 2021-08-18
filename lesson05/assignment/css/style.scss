@@ -13,7 +13,6 @@ body {
   max-width: 1440px;
   display: grid;
   justify-content: center;
-  grid-gap: 1rem;
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr 3fr;
   grid-template-areas: "header header"
@@ -24,35 +23,68 @@ body {
 
 #header {
   grid-area: header;
-  background-color: red;
+  text-align: center;
+  font-size: 2rem;
+  background-image: url("../images/earthquake-banner.jpg");
+  background-size: cover;
+  padding: 2rem;
+  h1 {
+    color: white;
+    padding: 1rem;
+    background-color: black;
+    display: inline-block;
+  }
 }
 
 #nav {
+  grid-area: nav;
+  display: grid;
+  justify-items: center;
   ul {
+    width: 90%;
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0;
     margin: 0;
     height: 100%;
     li {
       background-color: white;
-      padding: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: .4rem;
+      img {
+        width: 50px;
+        margin-bottom: .4rem;
+      }
+      a {
+        color: black;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        text-decoration: none;
+      }
     }
   }
-
-  grid-area: nav;
-  background-color: green;
 }
 
 #sidebar {
   grid-area: sidebar;
-  background-color: purple;
+  padding: 1rem;
+  img {
+    width: 80%
+  }
 }
 
 #main {
   grid-area: main;
-  background-color: orange;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  .page-preview {
+    border: 1px solid grey;
+    margin: 1rem 0 1rem 0;
+  }
 }
 
 #footer {
