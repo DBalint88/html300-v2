@@ -1,0 +1,234 @@
+
+// Partials.  wobble is the animation in pens 8 and 9.
+// mixins is just one mixin, a back-ground color transition on the active pen.
+@import 'wobble';
+@import 'colors';
+@import 'mixins';
+
+// I used the --wobble-factor variable to control the needle in pen 9 per user input
+
+html {
+  --wobble-factor: 0;
+}
+
+// Two equal columns, as many rows as necessary.
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 500px;
+  grid-gap: 60px;
+  width: 1245px;
+}
+
+// Setting up and framing the space for each pen, each label
+.pen, .label {
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+}
+
+// Generic blue rectangles that I could practice manipulating
+.object {
+  height: 60px;
+  width: 100px;
+  border-radius: 20%;
+  background-color: blue;
+}
+
+// No transitions, no mixin, just a harsh transform.
+#pen1 {
+  &:hover {
+    background-color: $edgewater;
+    #object1 {
+      transform: scale(2);
+    }
+  }
+}
+
+// Same as pen 1 but with transition and active-pen mixin.
+#pen2 {
+  transition: 1s ease-out;
+  &:hover {
+    @include active-pen;
+    #object2 {
+      transform: scale(2);
+    }
+  }
+  #object2 {
+    transition: transform 1s ease-out;
+  }
+}
+
+// Learning the different timing functions with a rectangle race
+#pen3 {
+  transition: 1s ease-out;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+   &:hover {
+    @include active-pen;
+    #object3a, #object3b, #object3c, #object3d, #object3e {
+    transform: translateX(400px);
+    }
+    #object3a {
+      transition: transform 3s linear;
+    }
+    #object3b {
+      transition: transform 3s ease;
+    }
+    #object3c {
+      transition: transform 3s ease-in;
+    }
+    #object3d {
+      transition: transform 3s ease-out;
+    }
+    #object3e {
+      transition: transform 3s ease-in-out;
+    }
+  }
+}
+
+// Playing with delays
+#pen4 {
+  transition: 1s ease-out;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  &:hover {
+    @include active-pen;
+    #object4a, #object4b, #object4c, #object4d, #object4e {
+    transform: translateX(400px);
+    }
+    #object4a {
+      transition: transform 3s linear;
+    }
+    #object4b {
+      transition: transform 3s linear .5s;
+    }
+    #object4c {
+      transition: transform 3s linear 1s;
+    }
+    #object4d {
+      transition: transform 3s linear 1.5s;
+    }
+    #object4e {
+      transition: transform 3s linear 2s;
+    }
+  }
+}
+
+// Playing with 2d rotations
+#pen5 {
+  transition: 1s ease-out;
+  &:hover {
+    @include active-pen;
+  }
+  #object5 {
+    transition: transform 3s ease .2s;
+    &:hover {
+      transform: rotate(2520deg);
+    }
+  }
+}
+
+// Playing with tranform-origin.  Each roates around its own position in the larger square.
+#pen6 {
+  transition: 1s ease-out;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  #object6a {
+    transform-origin: 0% 0%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6b {
+    transform-origin: 100% 0%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6c {
+    transform-origin: 0% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  #object6d {
+    transform-origin: 100% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  &:hover {
+    @include active-pen;
+    #object6a, #object6b, #object6c, #object6d {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+#label6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+// Playing with combined transformations.
+#pen7{
+  transition: 1s ease-out;
+  #object7 {
+    transform-origin: 100% 100%;
+    transition: transform 1s ease-in .2s;
+  }
+  &:hover {
+    @include active-pen;
+    #object7 {
+    transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);
+    }
+  }
+}
+
+// Playing with animation and specifically the wobble one.
+#pen8 {
+  transition: 1s ease-out;
+  &:hover {
+    @include active-pen;
+    #object8 {
+    animation: wobble 1s linear 0s infinite;
+    }
+  }
+}
+
+
+
+#pen9 {
+
+  // Scale is a half circle with a color gradient to indicated severity of shaking.
+  #scale {
+    width: 500px;
+    height: 250px;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    z-index: -1;
+    border-bottom: 0;
+    border: 10px solid gray;
+    background-image: linear-gradient(90deg, $severe 0%, $significant 20%, $moderate 35%, $mild 50%, $moderate 65%, $significant 80%, $severe 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  // Needle is just a tall skinny div.
+  #needle {
+    background-color: black;
+    height: 250px;
+    width: 10px;
+
+    // Absolute so it can overlay the scale
+    position: absolute;
+
+    // So the wobbling originates from the bottom-middle:
+    transform-origin: 50% 100%;
+    &.needle-animation {
+      animation: wobble 1s linear 0s infinite;
+    }
+  }
+}

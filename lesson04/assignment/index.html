@@ -4,12 +4,160 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" >
+  <title>CSS Transitions</title>
 </head>
 <body>
-  <main class="main">
 
-  </main>
+<!-- The page is set up with a left column of pens and a right column of
+labels describing the transition and the transformation / animation.  Pens
+#1-7 came from this site: https://thoughtbot.com/blog/transitions-and-transforms
+and I was just making this cheat sheet for practice, since I was really
+confused about the topic.  But I figured I'd turn in all my work. Skip to
+Pens #8 & 9 for the animation I intend for the class project. -->
+
+<!-- Pen & Label #1 -->
+  <div class="pen" id="pen1">
+    <div class="object" id="object1"></div>
+  </div>
+  <div class="label">
+    <h1>transform: scale(2)</h1>
+    <h1>no transition</h1>
+  </div>
+
+<!-- Pen & Label #2 -->
+  <div class="pen" id="pen2">
+    <div class="object" id="object2"></div>
+  </div>
+  <div class="label">
+    <h1>transform: scale(2)</h1>
+    <h1>transition: transform 1s;</h1>
+  </div>
+
+<!-- Pen & Label #3 -->
+  <div class="pen" id="pen3">
+    <div class="object" id="object3a"></div>
+    <div class="object" id="object3b"></div>
+    <div class="object" id="object3c"></div>
+    <div class="object" id="object3d"></div>
+    <div class="object" id="object3e"></div>
+  </div>
+  <div class="label">
+    <h1>transform: translateX(200px)</h1>
+    <h1>transition: all 3s linear;</h1>
+    <h1>transition: all 3s ease;</h1>
+    <h1>transition: all 3s ease-in;</h1>
+    <h1>transition: all 3s ease-out;</h1>
+    <h1>transition: all 3s ease-in-out;</h1>
+  </div>
+
+<!-- Pen & Label #4 -->
+  <div class="pen" id="pen4">
+    <div class="object" id="object4a"></div>
+    <div class="object" id="object4b"></div>
+    <div class="object" id="object4c"></div>
+    <div class="object" id="object4d"></div>
+    <div class="object" id="object4e"></div>
+  </div>
+  <div class="label">
+    <h1>transform: translateX(200px)</h1>
+    <h1>transition: all 3s linear;</h1>
+    <h1>transition: all 3s linear .5s;</h1>
+    <h1>transition: all 3s linear 1s;</h1>
+    <h1>transition: all 3s linear 1.5s;</h1>
+    <h1>transition: all 3s linear 2s;</h1>
+  </div>
+
+<!-- Pen & Label #5 -->
+  <div class="pen" id="pen5">
+    <div class="object" id="object5"></div>
+  </div>
+  <div class="label">
+    <h1>transform: rotate(2520deg)</h1>
+    <h1>transition: transform 3s ease .2s;</h1>
+  </div>
+
+<!-- Pen & Label #6 -->
+  <div class="pen" id="pen6">
+    <div class="pen" id="pen6a">
+      <div class="object" id="object6a"></div>
+    </div>
+    <div class="pen" id="pen6b">
+      <div class="object" id="object6b"></div>
+    </div>
+    <div class="pen" id="pen6c">
+      <div class="object" id="object6c"></div>
+    </div>
+    <div class="pen" id="pen6d">
+      <div class="object" id="object6d"></div>
+    </div>
+  </div>
+  <div class="label" id="label6">
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 0% 0%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 100% 0%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 0% 100%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+    <div class="">
+      <h5>transform: rotate(360deg)</h5>
+      <h5>transform-origin: 100% 100%</h5>
+      <h5>transition: transform 1s ease-in .2s</h5>
+    </div>
+  </div>
+
+<!-- Pen & Label #7 -->
+  <div class="pen" id="pen7">
+    <div class="object" id="object7"></div>
+  </div>
+  <div class="label">
+    <h4>transform: rotate(180deg) scale(2) translateX(42%) translateY(38%);</h4>
+    <h1>transform-origin: 100% 100%;</h1>
+    <h1>transition: transform 1s ease-in .2s;</h1>
+  </div>
+
+<!-- Pen & Label #8. This came from https://animate.style/ under "Attention
+Getters" called "Wobble." I traced it to this GitHub repo for the code on that specific animation:
+https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/wobble.css -->
+
+  <div class="pen" id="pen8">
+    <div class="object" id="object8"></div>
+  </div>
+  <div class="label">
+    <h1>animation: wobble 1s linear 0s infinite;</h1>
+  </div>
+
+<!-- Pen & Label #9.  This is the one I intend for the class project.
+
+I took Wobble and added an origin at the center of the bottom of the needle
+div, a "richter scale" behind it, and a JS user input.  This is a stand-in for an API reporting the richter scale reading from an active seismic event.  The needle wobbles more enthusiastically for higher numbers to represent the level of shaking. -->
+
+  <div class="pen" id="pen9">
+    <div id="scale"></div>
+    <div id="needle" class="needle-animation"></div>
+  </div>
+  <div class="label">
+    <h1>Wobble</h1>
+    <form id="wobble-form">
+      <label for="wobble-factor">
+        <input id="wobble-factor" type="number" name="wobble-value" value="0" max=10 min=0>
+      </label>
+      <input type="submit">
+
+    </form>
+  </div>
+
 </body>
+<script src="script.js">
+
+</script>
 </html>
