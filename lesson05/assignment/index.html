@@ -7,15 +7,17 @@
         <link rel="stylesheet" href="css/style.css" />
         <title>Assignment 05 - CSS Grid</title>
     </head>
+
       <body>
+        <!-- content-wrapper allows the entire page to be centered in a wide viewframe. -->
         <div class="content-wrapper">
           <header id="header">
             <h1>Wobble</h1>
           </header>
 
+          <!-- nav is made up of tiles, rather than the traditional list.  The tiles contain an image and an h3 label, which are together wrapped in a div for alignment, then an anchor so the whole tile is clickable -->
           <nav id="nav">
             <ul>
-
               <li>
                 <a href="#">
                   <div class="nav-tile">
@@ -64,6 +66,7 @@
             </ul>
           </nav>
 
+          <!-- I'm not sure yet what to put in the sidebar, so for now it's a placeholder "about-the-author" with a terrible selfie.  -->
           <aside id="sidebar">
             <div class="about-the-author">
               <h3>About the Author</h3>
@@ -72,6 +75,7 @@
             </div>
           </aside>
 
+          <!-- The main section of the page might one day contain information obtained from an API, but for now just provides descript link tiles to the other pages on the stie.  The whole layout is clickable, and so wrapped in an anchor. -->
           <main id="main">
             <h2>Welcome to Wobble.</h2>
             <p>Wobble is here for all your earthquake information needs.  Check out the site using the nav above or the links below:</p>
@@ -82,6 +86,8 @@
                 <div class="page-preview__desc">
                   <h3>Learn</h3>
                   <p>Learn everything you need to know about earthquakes in general!  How are they caused? What types are there?  All your questions answered and more!</p>
+                  <!-- Commented out below is the attribution for the image.  It's commented out because it currently breaks the ancestor anchor tag.  Not sure how to fix this, probably need a new layout. -->
+
                   <!--<p class="img-attr"><a href="https://commons.wikimedia.org/wiki/File:Earthquake_FW-HW_Diagram.jpg">Image</a> by Eround1 / GFDL</p>-->
                 </div>
               </div>
@@ -121,6 +127,7 @@
 
           </main>
 
+          <!-- Simple footer with understated nav links, title, copyright, and attributions. -->
           <footer id="footer">
             <nav id="footer__nav">
               <ul>
