@@ -110,22 +110,26 @@ body {
   grid-area: sidebar;
   height: 100%;
   padding: 1rem;
-
   }
 }
 
 #main {
   grid-area: main;
   background-color: #Fce1c7;
+  padding-right: 1rem;
   padding-left: 1rem;
   border-radius: 1rem;
+  a {
+    text-decoration: none;
+    color: black;
+  }
   .page-preview {
     display: grid;
     grid-template-columns: 8fr 13fr;
     border: 1px solid #A9a9a9;
     border-radius: 1rem;
     background-color: white;
-    margin: 1rem 1rem 1rem 0;;
+    margin: 1rem 0 1rem 0;
     padding: 1rem;
     transition: 1s ease;
     &:hover {
@@ -133,10 +137,12 @@ body {
     }
     img {
       width: 100%;
+      border-radius: 1rem;
       }
     .page-preview-desc {
       margin-left: 1rem;
       h3 {
+        text-decoration: none;
         margin: 0;
       }
       .img-attr {
