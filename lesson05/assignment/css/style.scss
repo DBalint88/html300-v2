@@ -4,20 +4,28 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+// Center the content and define the background color seen when the window is wider than the content.
+
 body {
   display: grid;
   justify-content: center;
   background-color: black;
 }
 
+// Here is the actual structure of the page.  Set up with grid to match the template.
+
 .content-wrapper {
   background-color: white;
+  // I decided to round all my corners on everything. I think it looks nice.
   border-radius: 1rem;
   padding: 1rem;
   max-width: 1440px;
+  // min-height only matters here when there aren't enough page previews for "main" to hit the bottom of the viewport.  Ensures we'll be using all available vertical space.
   min-height: 100vh;
   display: grid;
+  // header, nav, and footer will be as big as their content demands.  Main and sidebar will take up whatever space is left.
   grid-template-rows: auto auto 1fr auto;
+  // gap provides the separation space between each section without ugly margin attributes everywhere.
   gap: 1rem;
   grid-template-columns: 1fr 3fr;
   grid-template-areas: "header header"
@@ -38,14 +46,13 @@ body {
     padding: 2rem;
     background-color: black;
     border-radius: 1rem;
+    // inline-block to keep the black background from being as wide as the header
     display: inline-block;
   }
 }
 
 #nav {
   grid-area: nav;
-  display: grid;
-  justify-items: space-between;
   border: .25rem solid grey;
   border-radius: 1rem;
   ul {
@@ -54,17 +61,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    // 1rem of padding is coming from somewhere.  Couldn't find it, so I neutralized it.
     padding: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
     li {
       background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      width: 12%;
+      width: 11%;
+      // I want the entire tile to be click-able, not just the text or just the icon.
       a {
         color: black;
         font-size: 1.2rem;
@@ -72,11 +76,13 @@ body {
         text-decoration: none;
         .nav-tile {
           border-radius: 1rem;
-          padding: 1rem;
+          padding: .5rem;
+          // Flex properties to align the icon and text in each nav tile.
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          // Transition timing for the color inversion on hover.
           transition: .5s ease;
           h3 {
             margin: 0;
@@ -85,6 +91,7 @@ body {
             width: 50%;
             margin-bottom: .5rem;
           }
+          // This is the color inversion effect on hover over the nav tiles.  The text is separately defined, but results in the same effect.
           &:hover {
             img {
               filter: invert(100%);
@@ -101,36 +108,38 @@ body {
 }
 
 #sidebar {
-  .about-the-author {
-    background-color: lightgray;
-    border-radius: 1rem;
-    img {
-      width: 100%;
-  }
   grid-area: sidebar;
+  // height 100% to make sure it is the same height as main, even if it's lacking the content to fill that height.
   height: 100%;
   padding: 1rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+  img {
+    width: 100%;
+    border-radius: 1rem;
   }
 }
 
 #main {
   grid-area: main;
   background-color: #Fce1c7;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem 0 1rem;
   border-radius: 1rem;
+  // I want the entire preview tile to be clickable, so the div layout is wrapped in an anchor tag.
   a {
     text-decoration: none;
     color: black;
   }
   .page-preview {
     display: grid;
+    // 13:8 is golden ratio for maximum beauty
     grid-template-columns: 8fr 13fr;
     border: 1px solid #A9a9a9;
     border-radius: 1rem;
     background-color: white;
     margin: 1rem 0 1rem 0;
     padding: 1rem;
+    // Timing for the background color transform.
     transition: 1s ease;
     &:hover {
       background-color: #e3cbb3;
@@ -139,7 +148,7 @@ body {
       width: 100%;
       border-radius: 1rem;
       }
-    .page-preview-desc {
+    .page-preview__desc {
       margin-left: 1rem;
       h3 {
         text-decoration: none;
@@ -154,6 +163,7 @@ body {
 
 #footer {
   grid-area: footer;
+  padding: 1.5rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -167,18 +177,22 @@ body {
   a {
     color: white;
   }
-  nav {
-    width: 50%;
-    margin: 1rem 0 1rem 0;
-    ul {
-      padding: 0;
-      width: 100%;
-      list-style-type: none;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin: 0;
-      height: 100%;
+}
+
+#footer__nav {
+  width: 50%;
+  margin-bottom: 1rem;
+  ul {
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    height: 100%;
+    li {
+      text-decoration: underline;
     }
   }
 }
