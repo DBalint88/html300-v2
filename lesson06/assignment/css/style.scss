@@ -4,3 +4,31 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+body {
+  // Combined with #content-wrapper, limits the width of the page and centers it
+  display: grid;
+  justify-content: center;
+}
+
+#content-wrapper {
+  // Width is 100% of viewport in CSS, but restricted to Bootstrap breakpoints.
+  width: 100vw;
+  // Min-height 100vh combined with the grid-template-rows keeps the footer at the bottom of the page
+  min-height: 100vh;
+  // This is a grid where CSS takes care of the rows, and Bootstrap takes care of the columns.
+  display: grid;
+  // Row-gap and padding at horizontal dividers between sections
+  row-gap: .5rem;
+  padding: .5rem 0 .5rem 0;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: "header"
+                       "nav"
+                       "content"
+                       "footer"
+}
+
+// Definitions of grid-areas within the template above.
+header {grid-area: header;}
+nav {grid-area: nav;}
+#sidebar-main {grid-area: content;}
+footer {grid-area: footer;}
