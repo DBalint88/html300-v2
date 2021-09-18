@@ -33,7 +33,7 @@ nav {grid-area: nav;}
 #sidebar-main {grid-area: content;}
 footer {grid-area: footer;}
 
-// Trying to get my PDF's to load responsively with the reasonable aspect ratio on a variety of screens
+// The follow code gets my PDF's to load responsively with reasonable aspect ratios on a variety of screens
 
 @media only screen and (max-width: 991px) {#song-main {padding-bottom: 150%; background-color: white;}}
 @media only screen and (min-width: 992px) {#song-main {padding-bottom: 103%;}}
@@ -53,13 +53,14 @@ footer {grid-area: footer;}
   left: 0;
 }
 
+// This works with JS to make the "links" to each piece of sheet music
 .song-button {
   cursor: pointer;
   margin-bottom: 1rem;
 }
 
 
-// Glossary Page alignment.  Going for responsive images using Bootstrap
+// Glossary Page alignment.
 #glossary-main, #glossary-aside {
   padding-top: 2rem;
 }
@@ -68,15 +69,18 @@ footer {grid-area: footer;}
   margin-bottom: 2rem;
 }
 
+// This make the div containing the img responsive to the width of the screen...
 .glossary-image-container {
   width: 10%;
   margin: 1rem auto 1rem auto;
 }
 
+// ...and Bootstrap img-fluid makes the image itself responsive to the size of the div.
 .glossary-card img {
   width: 100%;
   height: 100%;
 }
+
 
 // Home Page
 
@@ -94,5 +98,14 @@ footer {grid-area: footer;}
   img {
     width: 100%;
     height: 100%;
+  }
+}
+
+// Discovery Page.  This is just a placeholder for the eventual API component, but with some random responsive divs to demonstrate my understanding of Bootstrap grid, because I don't think I used 3 breakpoints anywhere else on the site.
+
+#bootstrap-grid-demo {
+  width: 100%;
+  div {
+    height: 10rem;
   }
 }

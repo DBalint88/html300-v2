@@ -41,6 +41,8 @@
 
           <div id="sidebar-main" class="row bg-dark mx-0 py-2">
 
+
+            <!-- Begin the sidebar accordion.  Within each collapsible "level #" is a list of songs that get progressively harder. -->
             <div class="accordion col-lg-3 col-md-12 px-0" id="accordionExample">
 
               <div class="card">
@@ -180,6 +182,7 @@
 
             </div>
 
+            <!-- The PDF viewer.  Not sure how to use objects/iframes, embed seemed easy enough.  JS loops through the .song-button's above and listens for a click, then updates the src attribute of the embed with the correct file path. -->
             <main id="song-main" class="col-lg-9 col-md-12">
               <embed id="pdf-viewer" type="application/pdf" src="">
             </main>
@@ -189,8 +192,11 @@
           <footer class="bg-dark p-2">
             <h1 class="display-4 text-center text-primary my-1">HHS Piano</h1>
             <p class="lead text-primary text-center">Created by Daniel Balint for Hamden Public Schools</p>
+
+            <!-- I did actually email Gil and he responded that I could use his musis with no restrictions. -->
+            <p class="lead text-primary text-center">All sheet music used with permission from Gil DeBenedetti at <a href="https://gmajormusictheory.org/">G Major Music Theory</a>.  Check out his site for much more!</p>
             <p class="lead text-primary text-center">Version 2.0 with Bootstrap 4 & inline image loading.</p>
-            <p class="lead text-primary text-center">Last updated 9/13/21</p>
+            <p class="lead text-primary text-center">Last updated 9/18/21</p>
           </footer>
 
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
