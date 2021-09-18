@@ -2,7 +2,7 @@ What's required for the Bootstrap assignment
 
 	Four Pages
 		1 - Landing page with some content	<< Twitter feed, Introduction, Virtual Choirs
-		2 - Bootstrap Images	<< Glossary (rhythms, vocab)
+✔️	2 - Bootstrap Images	<< Glossary (rhythms, vocab)
 
 ✔️  3 - Accordion 		<< Levels / Songs viewer
 		
