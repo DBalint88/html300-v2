@@ -4,12 +4,153 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Assignment 05 - CSS Grid</title>
     </head>
-    <body>
-        <main class="main">
-          
-        </main>
+
+      <body>
+        <!-- content-wrapper allows the entire page to be centered in a wide viewframe. -->
+        <div class="content-wrapper">
+          <header id="header">
+            <h1>Wobble</h1>
+          </header>
+
+          <!-- nav is made up of tiles, rather than the traditional list.  The tiles contain an image and an h3 label, which are together wrapped in a div for alignment, then an anchor so the whole tile is clickable -->
+          <nav id="nav">
+            <ul>
+              <li>
+                <a href="#">
+                  <div class="nav-tile">
+                    <img src="Images/home.svg" alt="A house icon">
+                    <h3>Home</h3>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="nav-tile">
+                    <img src="Images/education.svg" alt="An icon of a teacher and students">
+                    <h3>Learn</h3>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="nav-tile">
+                    <img src="Images/setup.svg" alt="An icon of a pencil and wrench">
+                    <h3>Prepare</h3>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="nav-tile">
+                    <img src="Images/geography.svg" alt="An icon of a globe">
+                    <h3>Map</h3>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="nav-tile">
+                    <img src="Images/antenna.svg" alt="An icon of a radio tower">
+                    <h3>News</h3>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+
+          <!-- I'm not sure yet what to put in the sidebar, so for now it's a placeholder "about-the-author" with a terrible selfie.  -->
+          <aside id="sidebar">
+            <div class="about-the-author">
+              <h3>About the Author</h3>
+              <img src="Images/Dan.jpg" alt="A selfie the author took in winter. He's a young 33 year old white guy with brown hair, a red beard, and fly shades.">
+              <p>Dan Balint is a teacher in Hamden, CT.  He's also learning web design and Java, and hopes to become a software engineer.</p>
+            </div>
+          </aside>
+
+          <!-- The main section of the page might one day contain information obtained from an API, but for now just provides descript link tiles to the other pages on the stie.  The whole layout is clickable, and so wrapped in an anchor. -->
+          <main id="main">
+            <h2>Welcome to Wobble.</h2>
+            <p>Wobble is here for all your earthquake information needs.  Check out the site using the nav above or the links below:</p>
+
+            <a href="#">
+              <div class="page-preview">
+                <img src="Images/EQDiagram.jpg" alt="A diagram of the physics of an earthquake">
+                <div class="page-preview__desc">
+                  <h3>Learn</h3>
+                  <p>Learn everything you need to know about earthquakes in general!  How are they caused? What types are there?  All your questions answered and more!</p>
+                  <!-- Commented out below is the attribution for the image.  It's commented out because it currently breaks the ancestor anchor tag.  Not sure how to fix this, probably need a new layout. -->
+
+                  <!--<p class="img-attr"><a href="https://commons.wikimedia.org/wiki/File:Earthquake_FW-HW_Diagram.jpg">Image</a> by Eround1 / GFDL</p>-->
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="page-preview">
+                <img src="Images/EQPrepare.jpg" alt="An earthquake preparedness kit that includes a flashlight, first aid kit, and water bottles.">
+                <div class="page-preview__desc">
+                  <h3>Prepare</h3>
+                  <p>Earthquakes can strike wherever, whenever!  Take precautions and be prepared!</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="page-preview">
+                <img src="Images/EQMap.png" alt="A map of the Earth with dots indicating earthquakes from 1900-2017">
+                <div class="page-preview__desc">
+                  <h3>Map</h3>
+                  <p>Check out a live map and information about current seismic activity across the globe!</p>
+                  <!-- <p class="img-attr"><a href="https://commons.wikimedia.org/wiki/File:Map_of_earthquakes_1900-.svg">Image</a> by Pheonix7777 / CC BY-SA 4.0</p>-->
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="page-preview">
+                <img src="Images/EQNews.jpg" alt="An old edition of the Los Angeles Times newspaper with heading Quake Death Toll Near 125">
+                <div class="page-preview__desc">
+                  <h3>News</h3>
+                  <p>Get the latest with a live feed of earthquake related stories in the press.</p>
+                  <!-- <p class="img-attr"><a href="https://www.flickr.com/photos/michaelrperry/20934896683">Image</a> by Michael R Perry / CC BY 2.0</p> -->
+                </div>
+              </div>
+            </a>
+
+          </main>
+
+          <!-- Simple footer with understated nav links, title, copyright, and attributions. -->
+          <footer id="footer">
+            <nav id="footer__nav">
+              <ul>
+                <li>Home</li>
+                <li>Learn</li>
+                <li>Prepare</li>
+                <li>Map</li>
+                <li>News</li>
+              </ul>
+            </nav>
+
+
+            <p>Wobble © Dan Balint, 2021</p>
+
+            <p>Home & Prepare Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+
+            <p>Learn Icon made by <a href="https://www.flaticon.com/authors/geotatah" title="geotatah">geotatah</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+
+            <p>Globe Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+
+            <p>Radio made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+
+          </footer>
+      </div>
     </body>
 </html>
