@@ -5,7 +5,7 @@ let buttons = document.getElementsByClassName('song-button');
 
 // When a song button is click, take its ID and make it the file path for the viewer's src attribute.
 let imageLoader = function() {
-  viewer.src = "/images/pdfs/" + this.id + '.pdf'
+  viewer.src = "images/pdfs/" + this.id + '.pdf'
 };
 
 // "buttons" above selects all of the buttons in an HTML object.  This loops through that object listening for clicks, then sends the clicked button to imageLoader
