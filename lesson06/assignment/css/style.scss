@@ -44,6 +44,7 @@ footer {grid-area: footer;}
   position: relative;
   float: left;
   height: 0;
+  margin-bottom: 2rem;
 }
 
 #pdf-viewer {
@@ -63,6 +64,12 @@ footer {grid-area: footer;}
 // Glossary Page alignment.
 #glossary-main, #glossary-aside {
   padding-top: 2rem;
+}
+
+#glossary-aside {
+  height: auto;
+  position: sticky;
+  top: 0;
 }
 
 .glossary-card {
