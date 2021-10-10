@@ -1,0 +1,12 @@
+What's required for the Bootstrap assignment
+
+	Four Pages
+		1 - Landing page with some content	<< Twitter feed, Introduction, Virtual Choirs
+✔️	2 - Bootstrap Images	<< Glossary (rhythms, vocab)
+
+✔️  3 - Accordion 		<< Levels / Songs viewer
+		
+		4 - Bootstrap Grid	<< Similar Artists API
+
+What else should the piano website include to be viable as UW portfolio project?
+How to I use Git to manage two different repos?

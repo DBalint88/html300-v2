@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Assignment 06 - Bootstrap 4</title>
+    </head>
+    <body class="bg-dark">
+      <div id="content-wrapper" class="bg-primary container">
+
+          <header>
+            <h1 class="display-1 text-primary p-3 bg-dark my-0">HHS Piano</h1>
+          </header>
+
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+              ><span class="navbar-toggler-icon"></span></button>
+              <div id="navbarNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav nav-pills">
+                  <li class="nav-item p-2">
+                    <a class="nav-link p-2" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item p-2">
+                    <a class="nav-link p-2" href="songs.html">Songs</a>
+                  </li>
+                  <li class="nav-item p-2">
+                    <a class="nav-link active p-2" href="glossary.html">Glossary</a>
+                  </li>
+                  <li class="nav-item p-2">
+                    <a class="nav-link p-2" href="discover.html">Discover</a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </nav>
+
+          <!-- This sort of sub-nav functions as the index for the glossary terms.  Clicking on an item scrolls the viewport to the relevant card.  There are only 8 rhythms on here for now, but this glossary could grow quite large, and I want to look into lazy-loading the images. -->
+
+          <div id="sidebar-main" class="row mx-0">
+            <aside id="glossary-aside" class="bg-dark col-lg-2 col-md-12">
+              <h2 id="glossary-h2" class="text-primary text-center mb-2">Glossary</h2>
+              <ul class="text-center px-0">
+                <li><a href="#eighth-note">Eighth note</a></li>
+                <li><a href="#quarter-note">Quarter Note</a></li>
+                <li><a href="#half-note">Half Note</a></li>
+                <li><a href="#whole-note">Whole Note</a></li>
+                <li><a href="#eighth-rest">Eighth Rest</a></li>
+                <li><a href="#quarter-rest">Quarter Rest</a></li>
+                <li><a href="#half-rest">Half Rest</a></li>
+                <li><a href="#whole-rest">Whole Rest</a></li>
+              </ul>
+            </aside>
+
+            <!-- col settings put the index to the left pane on large screens, above on small screens. -->
+            <main id="glossary-main" class="bg-dark col-lg-10 col-md-12">
+
+
+              <div id="eighth-note" class="glossary-card card">
+                <div class="card-header">
+                  Eighth Note
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+
+                    <!-- Images are all responsive using Bootstrap img-fluid class. -->
+                    <img class="img-fluid" src="images/glossary/eighth-note-single.png" alt="">
+                  </div>
+                  <h4 class="card-text">Eighth Note</h4>
+                  <p>An eighth note (or 8th note) gets 1/2 of one beat.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="quarter-note" class="glossary-card card">
+                <div class="card-header">
+                  Quarter Note
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/quarter-note.png" alt="">
+                  </div>
+                  <h4 class="card-text">Quarter Note</h4>
+                  <p>A quarter note gets 1 beat.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="half-note" class="glossary-card card">
+                <div class="card-header">
+                  Half Note
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/half-note.png" alt="">
+                  </div>
+                  <h4 class="card-text">Half Note</h4>
+                  <p>A half note gets 2 beats.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="whole-note" class="glossary-card card">
+                <div class="card-header">
+                  Whole Note
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/whole-note.png" alt="">
+                  </div>
+                  <h4 class="card-text">Whole Note</h4>
+                  <p>A whole note gets 4 beats</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="eighth-rest" class="glossary-card card">
+                <div class="card-header">
+                  Eighth Rest
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/eighth-rest.png" alt="">
+                  </div>
+                  <h4 class="card-text">Eighth Rest</h4>
+                  <p>An eighth rest (or 8th rest) gets 1/2 beat of silence.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="quarter-rest" class="glossary-card card">
+                <div class="card-header">
+                  Quarter Rest
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/quarter-rest.png" alt="">
+                  </div>
+                  <h4 class="card-text">Quarter Rest</h4>
+                  <p>A quarter rest gets 1 beat of silence.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="half-rest" class="glossary-card card">
+                <div class="card-header">
+                  Half Rest
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/half-rest.png" alt="">
+                  </div>
+                  <h4 class="card-text">Half Rest</h4>
+                  <p>A half rest gets 2 beats of silence.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+              <div id="whole-rest" class="glossary-card card">
+                <div class="card-header">
+                  Whole Rest
+                </div>
+                <div class="card-body text-center">
+                  <div class="glossary-image-container">
+                    <img class="img-fluid" src="images/glossary/whole-rest.png" alt="">
+                  </div>
+                  <h4 class="card-text">Whole Rest</h4>
+                  <p>A whole rest gets 4 beats of silence.</p>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div>
+
+            </main>
+          </div>
+
+
+          <footer class="bg-dark p-2">
+            <h1 class="display-4 text-center text-primary my-1">HHS Piano</h1>
+            <p class="lead text-primary text-center">Created by Daniel Balint for Hamden Public Schools</p>
+            <p class="lead text-primary text-center">All sheet music used with permission from Gil DeBenedetti at <a href="https://gmajormusictheory.org/">G Major Music Theory</a>.  Check out his site for much more!</p>
+            <p class="lead text-primary text-center">Version 2.0 with Bootstrap 4 & inline image loading.</p>
+            <p class="lead text-primary text-center">Last updated 9/18/21</p>
+          </footer>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </div>
+    </body>
+</html>

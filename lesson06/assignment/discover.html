@@ -22,7 +22,7 @@
               <div id="navbarNav" class="collapse navbar-collapse">
                 <ul class="navbar-nav nav-pills">
                   <li class="nav-item p-2">
-                    <a class="nav-link active p-2" href="index.html">Home</a>
+                    <a class="nav-link p-2" href="index.html">Home</a>
                   </li>
                   <li class="nav-item p-2">
                     <a class="nav-link p-2" href="songs.html">Songs</a>
@@ -31,7 +31,7 @@
                     <a class="nav-link p-2" href="glossary.html">Glossary</a>
                   </li>
                   <li class="nav-item p-2">
-                    <a class="nav-link p-2" href="discover.html">Discover</a>
+                    <a class="nav-link active p-2" href="discover.html">Discover</a>
                   </li>
                 </ul>
 
@@ -39,21 +39,27 @@
             </div>
           </nav>
 
-          <!-- We don't have a lot going on at the moment, but this represents the kind of "news" items that could go on this page. -->
-          <main class="bg-dark">
-            <h1 class="text-primary">Welcome to the HHS Piano page!</h1>
-            <p class="text-primary">Use the links above to find your music and other information.  Here's what else is going on in the department:</p>
-            <div class="news-card row border border-primary">
-              <!-- When the screen is medium or wider, these sections are split 8/4, but any smaller and they become 2 rows one on top of the other. -->
-              <div class="news-card-image col-md-4 col-sm-12 bg-secondary">
-                <a href="https://youtu.be/DwSzU8DhETQ"><img class="img-fluid" src="images/this-is-me.jpg" alt=""></a>
+          <!-- This is just a placeholder for the eventual API implementation. -->
+          <main class="bg-dark text-primary py-2">
+            <h2>Coming soon:</h2>
+            <p>On this page I will build an API interface using <a href="https://tastedive.com/">TasteDive</a> to help students discover more music they might like based on what other people listen to who like the same artist.  Stay tuned!</p>
+
+            <!-- I don't think my other pages used 3 breakpoints as required, so here is just a demonstration of that. -->
+            <p>For now, though, here are some responsive divs that make use of at least 3 breakpoints using Bootstrap 4 grid.</p>
+            <div id="bootstrap-grid-demo" class="row">
+              <div class="col-xl-11 col-lg-9 col-md-7 col-sm-5 col-3 bg-primary">
+
               </div>
-              <div class="news-card-text col-md-8 col-sm-12 bg-dark text-primary">
-                <h3>The Hamden High Virtual Chorus Sings "This Is Me"</h3>
-                <p>Watch our very own chorus members adapting to the pandemic.  We may not be allowed to sing inside the building, but that won't stop us from singing.  Have a listen and enjoy This Is Me.</p>
+              <div class="col-xl-1 col-lg-3 col-md-5 col-sm-7 col-9 bg-secondary">
+
               </div>
+            <p>I will now also <p><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="My ability to use tooltips.">
+  demonstrate
+</button>
             </div>
           </main>
+
+
 
           <footer class="bg-dark p-2">
             <h1 class="display-4 text-center text-primary my-1">HHS Piano</h1>
@@ -63,9 +69,9 @@
             <p class="lead text-primary text-center">Last updated 9/18/21</p>
           </footer>
 
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       </div>
     </body>
