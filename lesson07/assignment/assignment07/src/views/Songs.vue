@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="songs">
+    <h1>This is a songs page</h1>
     <HelloWorld></HelloWorld>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "About",
+  name: "Songs",
   components: {
     HelloWorld,
   },
