@@ -29,33 +29,6 @@ export default {
 @import './src/css/settings.variables';
 @import './src/css/settings.responsive';
 @import './src/css/components.content';
-
-#app {
-display: grid;
-justify-content: center;
-}
-
-#content-wrapper {
-  width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  row-gap: .25rem;
-padding: 0;
-grid-template-rows: auto auto 1fr auto;
-grid-template-areas: "header"
-                     "nav"
-                     "content"
-                     "footer"
-}
-
-Header {grid-area: header;}
-Nav {grid-area: nav;}
-router-view {grid-area: content;}
-Footer {grid-area: footer;}
-
-@media only screen and (max-width: 991px) {#song-main {padding-bottom: 150%; background-color: white;}}
-@media only screen and (min-width: 992px) {#song-main {padding-bottom: 103%;}}
-@media only screen and (min-width: 1200px) {#song-main {padding-bottom: 100%;}}
-@media only screen and (min-width: 1400px) {#song-main {padding-bottom: 90%;}}
+@import './src/css/style.scss'
 
 </style>

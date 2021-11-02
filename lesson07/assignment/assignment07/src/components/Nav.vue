@@ -9,13 +9,13 @@
             <router-link class="nav-link active p-2" to="/">Home</router-link>
           </li>
           <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/">Songs</router-link>
+            <router-link class="nav-link active p-2" to="/Songs">Songs</router-link>
           </li>
           <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/">Glossary</router-link>
+            <router-link class="nav-link active p-2" to="/Glossary">Glossary</router-link>
           </li>
           <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/">Discover</router-link>
+            <router-link class="nav-link active p-2" to="/Discover">Discover</router-link>
           </li>
         </ul>
       </div>

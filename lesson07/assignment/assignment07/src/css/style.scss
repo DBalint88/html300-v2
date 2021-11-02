@@ -1,10 +1,4 @@
-// Import partials here
-@import 'base.normalize';
-@import 'settings.variables';
-@import 'settings.responsive';
-@import 'components.content';
-
-body {
+#app {
   // Combined with #content-wrapper, limits the width of the page and centers it
   display: grid;
   justify-content: center;
@@ -28,10 +22,10 @@ body {
 }
 
 // Definitions of grid-areas within the template above.
-header {grid-area: header;}
-nav {grid-area: nav;}
-#sidebar-main {grid-area: content;}
-footer {grid-area: footer;}
+Header {grid-area: header;}
+Nav {grid-area: nav;}
+router-view {grid-area: content;}
+Footer {grid-area: footer;}
 
 // The follow code gets my PDF's to load responsively with reasonable aspect ratios on a variety of screens
 
