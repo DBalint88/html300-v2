@@ -1,21 +1,20 @@
 <template>
   <div id="sidebar-main" class="row bg-dark mx-0 py-2" >
 
-    <SongList @sheetEmit="updateDisplay" @vidEmit="updateVidLink"/>
+    <SongList @sheetEmit="updateDisplay" @vidEmit="updateVidLink" @scrollMe="scrollMe"/>
 
 
 
     <!-- The PDF viewer.  Not sure how to use objects/iframes, embed seemed easy enough.  JS loops through the .song-button's above and listens for a click, then updates the src attribute of the embed with the correct file path. -->
 
     <main id="song-main" class="col-lg-9 col-md-12 bg-dark">
-      <div class="video-download-bar bg-dark">
-        <a :href="selectedSongVideo" target="_blank"><button class="dynamic-button btn btn-primary p-1" type="button" name="button">YouTube</button></a>
-        <a :href="selectedSongSheet" target="_blank"><button class="dynamic-button btn btn-secondary p-1" type="button" name="button">Download PDF</button></a>
+      <div ref="dynamic-buttons" class="video-download-bar bg-dark">
+        <a v-if="selectedSongSheet.length > 0" :href="selectedSongVideo" target="_blank"><button class="dynamic-button btn btn-primary p-1" type="button" name="button">YouTube</button></a>
+        <a v-if="selectedSongSheet.length > 0" :href="selectedSongSheet" target="_blank"><button class="dynamic-button btn btn-secondary p-1" type="button" name="button">Download PDF</button></a>
       </div>
-      <embed id="pdf-viewer" type="application/pdf" :src="this.selectedSongSheet">
+      <embed v-if="selectedSongSheet.length > 0" id="pdf-viewer" type="application/pdf" :src="this.selectedSongSheet">
 
     </main>
-    <a :href="this.selectSongVideo"><button type="button" name="button" :href="this.selectedSongVideo">click a the button</button></a>
   </div>
 </template>
 
@@ -40,6 +39,9 @@ export default {
     },
     updateVidLink(e) {
       this.selectedSongVideo = e;
+
+      let dynamicButtons = this.$refs["dynamic-buttons"];
+      dynamicButtons.scrollIntoView({ behavior: 'smooth' });
     }
   },
   components: {
@@ -61,9 +63,15 @@ export default {
     grid-template-columns: auto auto;
     grid-template-rows: 2rem;
     margin-bottom: .1rem;
+
   }
 
   .dynamic-button {
     width: 100%;
+    border: 1px solid white;
+  }
+
+  #pdf-viewer {
+    background-color: white;
   }
 </style>

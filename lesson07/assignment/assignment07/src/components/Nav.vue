@@ -1,25 +1,18 @@
 <template>
-  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
-      ><span class="navbar-toggler-icon"></span></button>
-      <div id="navbarNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav nav-pills">
-          <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/">Home</router-link>
-          </li>
-          <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/Songs">Songs</router-link>
-          </li>
-          <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/Glossary">Glossary</router-link>
-          </li>
-          <li class="nav-item p-2">
-            <router-link class="nav-link active p-2" to="/Discover">Discover</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <div>
+    <b-navbar toggleable="lg" type="dark" variant="dark">
+
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item href="#"><router-link class="nav-link active p-2" to="/">Home</router-link></b-nav-item>
+          <b-nav-item href="#"><router-link class="nav-link active p-2" to="/Songs">Songs</router-link></b-nav-item>
+          <b-nav-item href="#"><router-link class="nav-link active p-2" to="/Glossary">Glossary</router-link></b-nav-item>
+          <b-nav-item href="#"><router-link class="nav-link active p-2" to="/Discover">Discover</router-link></b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </div>
 </template>
 
