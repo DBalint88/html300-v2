@@ -7,7 +7,11 @@
 
     <!-- The PDF viewer.  Not sure how to use objects/iframes, embed seemed easy enough.  JS loops through the .song-button's above and listens for a click, then updates the src attribute of the embed with the correct file path. -->
 
-    <main id="song-main" class="col-lg-9 col-md-12">
+    <main id="song-main" class="col-lg-9 col-md-12 bg-dark">
+      <div class="video-download-bar bg-dark">
+        <a :href="selectedSongVideo" target="_blank"><button class="dynamic-button btn btn-primary p-1" type="button" name="button">YouTube</button></a>
+        <a :href="selectedSongSheet" target="_blank"><button class="dynamic-button btn btn-secondary p-1" type="button" name="button">Download PDF</button></a>
+      </div>
       <embed id="pdf-viewer" type="application/pdf" :src="this.selectedSongSheet">
 
     </main>
@@ -35,7 +39,7 @@ export default {
       // this.selectSong = e.songData;
     },
     updateVidLink(e) {
-      this.selectSongVideo = e;
+      this.selectedSongVideo = e;
     }
   },
   components: {
@@ -51,4 +55,15 @@ export default {
     padding: 1.5rem;
   }
 
+  .video-download-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 2rem;
+    margin-bottom: .1rem;
+  }
+
+  .dynamic-button {
+    width: 100%;
+  }
 </style>
