@@ -43,7 +43,10 @@ export default {
       console.log(this.scrollTarget);
       let scrollAnchor = this.$refs[this.scrollTarget];
       console.log(scrollAnchor);
-      scrollAnchor[0].scrollIntoView();
+      scrollAnchor[0].scrollIntoView({
+        block: 'start',
+        behavior: 'smooth'
+      });
     },
   },
   data() {
@@ -104,6 +107,8 @@ export default {
 </script>
 
 <style>
+
+
 
 #glossary-sticky {
   height: auto;

@@ -1,6 +1,7 @@
 <template>
   <div id="sidebar-main" class="row bg-dark mx-0 py-2" >
 
+    
     <SongList @sheetEmit="updateDisplay" @vidEmit="updateVidLink" @scrollMe="scrollMe"/>
 
 
@@ -50,8 +51,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scope lang="scss">
 
+  * {
+    scroll-behavior: smooth;
+  }
   main {
     max-width: 100vw;
     padding: 1.5rem;
@@ -60,7 +64,7 @@ export default {
   .video-download-bar {
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 2rem;
     margin-bottom: .8rem;
 
@@ -75,4 +79,5 @@ export default {
   #pdf-viewer {
     background-color: white;
   }
+
 </style>

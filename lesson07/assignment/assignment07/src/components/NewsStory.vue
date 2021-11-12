@@ -2,10 +2,10 @@
   <div>
     <div v-for="story in stories" v-bind:key="story" class="news-card row border border-primary">
       <!-- When the screen is medium or wider, these sections are split 8/4, but any smaller and they become 2 rows one on top of the other. -->
-      <div class="news-card-image col-md-4 col-sm-12 bg-secondary">
+      <div class="news-card-image col-lg-4 col-md-12 col-sm-12 bg-secondary">
         <a :href="story.link"><img class="img-fluid" :src="story.pic" alt=""></a>
       </div>
-      <div class="news-card-text col-md-8 col-sm-12 bg-dark text-primary">
+      <div class="news-card-text col-lg-8 col-md-12 col-sm-12 bg-dark text-primary">
         <h3>{{ story.title }}</h3>
         <p>{{ story.date }}</p>
         <p>{{ story.desc }}</p>
@@ -29,7 +29,7 @@ export default {
             desc: 'Watch our very own chorus members adapting to the pandemic.  We may not be allowed to sing inside the building, but that won\'t stop us from sings.  Have a listen and enjoy This Is Me.'
           },
           {
-            title: 'The Hamden High virtual Chorus Sings "You Will Be Found"',
+            title: 'The Hamden High Virtual Chorus Sings "You Will Be Found"',
             date: 'December 17, 2020',
             link: 'https://www.youtube.com/watch?v=Hu0fq5tMOnk',
             pic: './you-will-be-found.jpg',
