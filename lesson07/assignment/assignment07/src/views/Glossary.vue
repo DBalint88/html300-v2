@@ -89,13 +89,13 @@ export default {
             name: 'Half Rest',
             pic: './glossary/half-rest.png',
             anchor: 'half-rest',
-            definition: 'A half rest gets 2 beats.  It looks like a "top-half" that Abe Lincoln might\'ve worn.',
+            definition: 'A half rest gets 2 beats.  It looks like a "top-half" that Abe Lincoln might\'ve worn!',
           },
           {
             name: 'Whole Rest',
             pic: './glossary/whole-rest.png',
             anchor: 'whole-rest',
-            definition: 'A whole rest gets 4 beats.  It looks like a "whole" in the ground!.',
+            definition: 'A whole rest gets 4 beats.  It looks like a "whole" in the ground!',
           },
         ]
       }
