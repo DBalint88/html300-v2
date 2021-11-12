@@ -1,7 +1,7 @@
 <template>
   <div class="accordion col-lg-3 col-md-12 px-0 my-4" role="tablist" id="accordionExample">
-    <b-card v-for="level in levels" v-bind:key="level" no-body class="mb-1">
-      <b-card-header header-tag="header" class="p-1 col text-center bg-secondary" role="tab">
+    <b-card v-for="level in levels" v-bind:key="level" no-body class="">
+      <b-card-header header-tag="header" class="p-0 col text-center bg-secondary" role="tab">
         <b-button v-b-toggle="'accordion-'+level.index" variant="primary" class="btn-block">{{ level.skillLevel }}</b-button>
       </b-card-header>
       <b-collapse :id="'accordion-'+level.index" accordion="my-accordion" role="tabpanel">
@@ -117,4 +117,5 @@ export default {
 .btn-block {
   width: 100%
 }
+
 </style>

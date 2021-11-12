@@ -9,8 +9,8 @@
 
     <main id="song-main" class="col-lg-9 col-md-12 bg-dark">
       <div ref="dynamic-buttons" class="video-download-bar bg-dark">
-        <a v-if="selectedSongSheet.length > 0" :href="selectedSongVideo" target="_blank"><button class="dynamic-button btn btn-primary p-1" type="button" name="button">YouTube</button></a>
-        <a v-if="selectedSongSheet.length > 0" :href="selectedSongSheet" target="_blank"><button class="dynamic-button btn btn-secondary p-1" type="button" name="button">Download PDF</button></a>
+        <a v-if="selectedSongSheet.length > 0" :href="selectedSongVideo" target="_blank"><button class="dynamic-button btn btn-primary" type="button" name="button">YouTube</button></a>
+        <a v-if="selectedSongSheet.length > 0" :href="selectedSongSheet" target="_blank"><button class="dynamic-button btn btn-secondary" type="button" name="button">Download PDF</button></a>
       </div>
       <embed v-if="selectedSongSheet.length > 0" id="pdf-viewer" type="application/pdf" :src="this.selectedSongSheet">
 
@@ -62,13 +62,14 @@ export default {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 2rem;
-    margin-bottom: .1rem;
+    margin-bottom: .8rem;
 
   }
 
   .dynamic-button {
     width: 100%;
     border: 1px solid white;
+    padding: .45rem;
   }
 
   #pdf-viewer {
