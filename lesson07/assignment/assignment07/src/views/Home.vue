@@ -2,6 +2,7 @@
   <main class="bg-dark">
     <h1 class="text-primary">Welcome to the HHS Piano page!</h1>
     <p class="text-primary">Use the links above to find your music and other information.  Here's what else is going on in the department:</p>
+    <!--Reference ot the NewsStory component which takes over to generate the formatted stories. -->
     <NewsStory />
   </main>
 </template>

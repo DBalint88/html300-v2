@@ -1,6 +1,7 @@
 <template>
   <div id="sidebar-main" class="row mx-0">
 
+    <!-- This portion below is the index on the side. -->
     <aside id="glossary-aside" class="bg-dark col-lg-2 col-md-12">
       <div id="glossary-sticky">
         <h2 id="glossary-h2" class="text-primary text-center mb-2">Glossary</h2>
@@ -10,6 +11,7 @@
       </div>
     </aside>
 
+    <!-- This portion below is for the actual flash cards.  I thought of making the index and the flash cards into separate components, but realized I would just be copying the data to both components - at that point I might as well just build both on the same page so they can reference the same data.-->
     <main id="glossary-main" class="bg-dark col-lg-10 col-md-12">
 
       <div v-for="term in terms" v-bind:key="term" class="glossary-card card">
@@ -38,11 +40,17 @@ export default {
   name: "Glossary",
   scrollTarget: '',
   methods: {
+    // I had one hell of a time getting page anchors to work dynamically because of the Vue router.  This was the solution I landed on but had to do a lot of debugging before I figured out I need to reference the first entry in the array returned by this.$refs - I still don't fully understand it, but it works.
     glossaryScroll(refname) {
+      // store the designated glossary term in the global Vue data item "scrollTarget" ...
       this.scrollTarget = refname;
       console.log(this.scrollTarget);
+
+      // ...then pass that string to the refs on the page.  The matching one exists on one of the divs, as the refs were made dynamically using the same terms.anchor attribute.
       let scrollAnchor = this.$refs[this.scrollTarget];
       console.log(scrollAnchor);
+
+      // For the life of me I can't get smooth scroll to work on mobile, in safari or Chrome, using JS or CSS...
       scrollAnchor[0].scrollIntoView({
         block: 'start',
         behavior: 'smooth'
@@ -106,9 +114,12 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
 
-
+/* ...but I keep trying. */
+* {
+  scroll-behavior: smooth;
+}
 
 #glossary-sticky {
   height: auto;

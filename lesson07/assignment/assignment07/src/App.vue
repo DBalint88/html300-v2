@@ -20,8 +20,9 @@ export default {
     Header,
     Nav,
     Footer
-  },
+  }
 }
+
 </script>
 
 <style lang="scss">
