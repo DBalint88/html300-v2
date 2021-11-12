@@ -2,10 +2,12 @@
   <div id="sidebar-main" class="row mx-0">
 
     <aside id="glossary-aside" class="bg-dark col-lg-2 col-md-12">
-      <h2 id="glossary-h2" class="text-primary text-center mb-2">Glossary</h2>
-      <ul class="text-center px-0">
-        <li class="glossary-index-item" v-for="term in terms" v-bind:key="term" @click="glossaryScroll(term.anchor)">{{ term.name }}</li>
-      </ul>
+      <div id="glossary-sticky">
+        <h2 id="glossary-h2" class="text-primary text-center mb-2">Glossary</h2>
+        <ul class="text-center px-0">
+          <li class="glossary-index-item" v-for="term in terms" v-bind:key="term" @click="glossaryScroll(term.anchor)">{{ term.name }}</li>
+        </ul>
+      </div>
     </aside>
 
     <main id="glossary-main" class="bg-dark col-lg-10 col-md-12">
@@ -103,6 +105,11 @@ export default {
 
 <style>
 
+#glossary-sticky {
+  height: auto;
+  position: sticky;
+  top: 2rem;
+}
 .glossary-index-item {
   color: white;
   list-style: none;
