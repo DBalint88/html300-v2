@@ -2,7 +2,7 @@
   <div id="app" class="bg-dark">
     <div id="content-wrapper" class="bg-primary container">
       <Header />
-      <Nav />
+      <Nav :currentPage="this.$route.path" />
       <router-view />
       <Footer />
     </div>
@@ -16,7 +16,20 @@ import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
-  components: {
+  data() {
+    return {
+      currentPage: ''
+    }
+  },
+  methods: {
+    updateCurrentPage: function() {
+      this.currentPage = this.$route.path
+    },
+  mounted: function() {
+    this.$nextTick(this.updateCurrentPage)
+    }
+  },
+    components: {
     Header,
     Nav,
     Footer
