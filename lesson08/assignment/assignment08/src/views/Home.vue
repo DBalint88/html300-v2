@@ -9,10 +9,11 @@
 
 <script>
 import NewsStory from "@/components/NewsStory.vue";
-
+import { exampleMixin } from '../mixins/exampleMixin.js'
 
 export default {
   name: "Home",
+  mixins: [exampleMixin],
   components: {
     NewsStory
   },

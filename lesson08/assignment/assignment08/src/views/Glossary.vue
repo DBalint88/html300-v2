@@ -14,30 +14,22 @@
     <!-- This portion below is for the actual flash cards.  I thought of making the index and the flash cards into separate components, but realized I would just be copying the data to both components - at that point I might as well just build both on the same page so they can reference the same data.-->
     <main id="glossary-main" class="bg-dark col-lg-10 col-md-12">
 
-      <div v-for="term in terms" v-bind:key="term" class="glossary-card card">
-        <div :ref="term.anchor" :id="term.anchor" class="card-header">
-          {{ term.name }}
-        </div>
-        <div class="card-body text-center">
-          <div class="glossary-image-container">
-
-            <!-- Images are all responsive using Bootstrap img-fluid class. -->
-            <img class="img-fluid" :src="term.pic" alt="">
-          </div>
-          <h4 class="card-text">{{ term.name }}</h4>
-          <p>{{ term.definition }}</p>
-        </div>
-        <div class="card-footer">
-        </div>
-      </div>
+      <!--For assignment08, this is imported from a component that iterates through the card markup that was here before.  The "terms" array is passed from this parent to the child component, then iterated upon. -->
+      <GlossaryCard :terms="this.terms" />
 
     </main>
   </div>
 </template>
 
 <script>
+import GlossaryCard from "@/components/GlossaryCard.vue";
+
+
 export default {
   name: "Glossary",
+  components: {
+    GlossaryCard
+  },
   scrollTarget: '',
   methods: {
     // I had one hell of a time getting page anchors to work dynamically because of the Vue router.  This was the solution I landed on but had to do a lot of debugging before I figured out I need to reference the first entry in the array returned by this.$refs - I still don't fully understand it, but it works.

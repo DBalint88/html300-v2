@@ -21,14 +21,6 @@ export default {
       currentPage: ''
     }
   },
-  methods: {
-    updateCurrentPage: function() {
-      this.currentPage = this.$route.path
-    },
-  mounted: function() {
-    this.$nextTick(this.updateCurrentPage)
-    }
-  },
     components: {
     Header,
     Nav,
