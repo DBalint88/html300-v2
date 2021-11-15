@@ -8,7 +8,7 @@
         <div class="glossary-image-container">
 
           <!-- Images are all responsive using Bootstrap img-fluid class. On click, execute the toggleBorder function inside the borderClick mixin imported below to add/remove the .bordered class defined below.-->
-          <img class="img-fluid" @click="toggleBorder" :src="term.pic"  alt="">
+          <img class="img-fluid" @click="toggleBorder" :src="term.pic"  :alt="term.name">
         </div>
         <h4 class="card-text">{{ term.name }}</h4>
         <p>{{ term.definition }}</p>
